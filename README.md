@@ -6,11 +6,13 @@ RASPBERRYPI CPU TEMPERATURE MONITOR PROGRAM
 Written by Tianhao Yu
 
 CREATING LOCAL VARIABLES:
+
 1. Create CPUTemperature, twitter bot, and other local variables to access and store data.
 
 2. Create ThingSpeak variables (channel ID, write key) to write data to ThingSpeak channel.
 
-CREATING FUNCTIONS
+CREATING FUNCTIONS:
+
 3. write_temp() function takes 2 parameters: CPU temperature and write channel. It will write the temperature to the
    ThingSpeak channel and print temperature and date and time locally. If it fails, it will print "Connection Failed"
    message and retry next time.
@@ -27,7 +29,8 @@ CREATING FUNCTIONS
 6. good_bye() function takes no parameter and it will be executed at 23:51:00 by schedule. It will print a local message
    signaling the termination of the program.
 
-RUNNING MAIN PROGRAM
+RUNNING MAIN PROGRAM:
+
 7. Main function will print a message signaling the start of the program. Then start the schedule pending and sleeps
    every second.
 7.1 Schedules are used to let a certain function run at a specific time. 3 schedule commands are used to measure CPU
@@ -37,6 +40,7 @@ RUNNING MAIN PROGRAM
 Written by Kennedy C. Ezumah
 
 SETTING UP A TWITTER DEVELOPER ACCOUNT:
+
 1. First create a Twitter Developer account and a custom Twitter App to gain access to the Twitter API.
 
 	>>> https://developer.twitter.com/en
@@ -44,7 +48,8 @@ SETTING UP A TWITTER DEVELOPER ACCOUNT:
 2. If the Twitter account that you used to create the developer account is different from that which you will use as a bot, 
    you will need to run the "authorize_nonprimary.py" module to authorize its interaction with your Twitter App (Wait until step 4 to do this).
 
-SETTING UP TWITTER CREDENTIALS 
+SETTING UP TWITTER CREDENTIALS:
+
 3. Create a .JSON file named "twitter_api_credentials", where you will proceed to make a dictionary to store the API key and token from your Twitter App. 
    Keep this file in the same working directory as your files, as this is where you will store the access key and token that you  will extract from your
    bot account. It is essential to keep this information in a separate file, and avoid hard-coding it into your program in order to minimize security risks
@@ -62,20 +67,23 @@ SETTING UP TWITTER CREDENTIALS
    saved as key-value pairs in your "twitter_api_credentials" .JSON file. At this point your Twitter App has been authorized to perform actions on your
    bot account and you are ready to post!
 
-POSTING A BOT-TWEET
+POSTING A BOT-TWEET:
+
 7. Run the "driver_file.py" file and enter a custom tweet. Head over to twitter to see that your tweet is successful!
 
 :::::::::::::::::::::::::::::::::::::::: WEB-SCRAPER SECTION :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 Written by Xiaoman Yang
 
-CREATING FUNCTIONS
+CREATING FUNCTIONS:
+
 1. The get_url() function takes one parameter which will be the location of your chosen, and returns the url of that location.
 
 2. The get_info() function takes one parameter as well, and it finds all the data you're looking for as they have different attributes under the tag, 
     which includes the location of the work, the company that is hiring and a short description of what is expected for the job. 
     It stores the information in a 3-element tuple and returns it.
 
-THE MAIN() FUNCTION
+THE MAIN() FUNCTION:
+
 1.Create a list of locations to run through.
 
 2. For each city,  create an empty list to save the data you fetch.
@@ -90,7 +98,8 @@ THE MAIN() FUNCTION
 
 3. This program will terminate when we have looped through the entire location list, or it can be interrupted manually after we have run for two hours. 
 
-NB
+NB:
+
 1. For legal precautions, the data we get in the process will not be saved and used in any way.
 
 2. Apart from the above concerns, the idea was to ask the pi to do different tasks for some time period, so it did not necessarily need to save the data.
